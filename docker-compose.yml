@@ -19,4 +19,4 @@ services:
     ports:
       - "8004:8000"
     depends_on:
-      - dg
+      - db
