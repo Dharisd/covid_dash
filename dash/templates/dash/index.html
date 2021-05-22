@@ -1,5 +1,5 @@
+{% load static %}
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,14 +10,12 @@
     <style>
         @font-face {
             font-family: "mv waheed";
-            src: url(https://dhivehi.mv/fonts/data/df/MV_Waheed.otf
-)format("opentype");
+            src: url("{% static 'MV_Waheed.otf' %}" )format("opentype");
         }
 
         @font-face {
-            font-family: "mv aaamu fk";
-            src: url(https://fonadhoo.com/fonts/aammu.ttf
-)format("truetype");
+            font-family: "mv typer";
+            src: url("{% static 'mvtyper.ttf' %}" )format("truetype");
         }
     </style>
 
@@ -32,17 +30,6 @@
 
                             </a>
                             <div class="-mr-2 flex items-center md:hidden">
-                                <button type="button"
-                                    class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                                    aria-expanded="false">
-                                    <span class="sr-only">Open main menu</span>
-                                    <!-- Heroicon name: outline/menu -->
-                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -55,10 +42,10 @@
 
         </div>
 
-        <main class="mt-16 mx-auto bg-gray-100 max-w-7xl px-4 sm:mt-24">
+        <main class="mt-8 mx-auto bg-gray-100 max-w-7xl px-4 sm:mt-24">
             <div class="text-center">
                 <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                    <span class="block xl:inline" style="	font-family: 'mv waheed' ;">ފުނަދޫ ކޮވިޑް</span>
+                    <span class="block xl:inline" style="	font-family: 'mv typer' ;">ފުނަދޫ ކޮވިޑް</span>
 
                 </h1>
                 <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
@@ -72,44 +59,50 @@
             <div class="flex  text-right bg-gray-100 dark:bg-gray-900">
                 <div class="container  text-right px-2 mx-auto my-10">
                     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                        <div class="p-5 bg-white order-3 border-2 border-green-500 border-opacity-75 rounded shadow-sm">
+                        <div class="p-5 bg-white order-2 border-2 border-green-500 border-opacity-75 rounded shadow-sm">
                             <div class="text-2xl text-gray-800 text-center" style="font-family: 'mv waheed';">ނައްސި
                             </div>
                             <div class="">
-                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.negative_samples}}</div>
+                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.negative_samples}}
+                                </div>
                             </div>
-                            <div class="text-xl text-center font-bold text-gray-600 ">{{samples.negative_samples_last_day}}</div>
-                            <div class="text-xs text-center font-bold text-gray-600 " style="font-family: 'mv waheed';">
+                            <div class="text-xl text-center font-bold text-gray-600 ">
+                                {{samples.negative_samples_last_day}}</div>
+                            <div class="text-xs text-center  text-gray-600 " style="font-family: 'mv waheed';">
                                 ވޭތުވެދިޔަ 24 ގަޑިއިރު</div>
                         </div>
-                        <div class="p-5 border-2 order-4 border-red-500 border-opacity-75 bg-white rounded  shadow-sm">
+                        <div class="p-5 border-2 order-1 border-red-500 border-opacity-75 bg-white rounded  shadow-sm">
                             <div class="text-2xl  text-gray-800 text-center" style="font-family: 'mv waheed';">ފައްސި
                             </div>
                             <div class="">
-                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.positive_samples}}</div>
-                                <div class="text-xl text-center font-bold text-gray-600 ">{{samples.negative_samples_last_day}}</div>
-                                <div class="text-xs text-center font-bold text-gray-600 "
+                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.positive_samples}}
+                                </div>
+                                <div class="text-xl text-center font-bold text-gray-600 ">
+                                    {{samples.negative_samples_last_day}}</div>
+                                <div class="text-xs text-center text-gray-600 "
                                     style="font-family: 'mv waheed';"> ވޭތުވެދިޔަ 24 ގަޑިއިރު</div>
                             </div>
                         </div>
-                        <div class="p-5 border-2 order-2 border-green-500 border-opacity-0 bg-white rounded shadow-sm">
+                        <div class="p-5 border-2 order-3 border-green-500 border-opacity-0 bg-white rounded shadow-sm">
                             <div class="text-2xl  text-gray-800 text-center" style="font-family: 'mv waheed';">ނަތީޖާ
                                 ނުލިބޭ ސާމްޕްލްގެ އަދަދު</div>
                             <div class="">
-                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.waiting_samples}}</div>
+                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.waiting_samples}}
+                                </div>
                             </div>
                         </div>
-                        <div class="p-5 bg-white order-1  rounded shadow-sm">
+                        <div class="p-5 bg-white order-4  rounded shadow-sm">
                             <div class="text-2xl text-gray-800 text-center" style="font-family: 'mv waheed';">ނެގުނު
                                 ސަާމްޕްލް ގެ އަދަދު</div>
                             <div class="">
-                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.waiting_samples}}</div>
+                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.waiting_samples}}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
+
+
             </div>
 
 
@@ -117,30 +110,30 @@
 
 
 
-            <div class="mt-32 flex flex-col justify-center">
-                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+            <div class="mt-5 flex flex-col justify-center">
+                <p class="mt-3 text-2xl max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
                     style="font-family: 'mv waheed';">
                     ކަރަންޓީނު ކުރެވިފައިވާ ގެތައް
                 </p>
-                {%if q_addresses %}
-                {% for address in q_addresses%}
                 <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-10">
+                    {%if q_addresses%}
+                    {% for address in q_addresses%}
                     <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
                         <div class="w-full flex text-right justify-between p-6 space-x-6">
-                            <div class="flex-1 space-y-2 truncate">
+                            <div class="flex-1 truncate">
                                 <div class="text-center">
-                                    <h3 class="text-gray-800 mb-4 text-xl mt-2 font-large "
+                                    <h3 class="text-gray-800 mb-4 text-xl  font-large truncate"
                                         style="font-family: 'mv waheed';">{{address.name}}</h3>
 
-                                    <div
-                                        class=" inline-block text-red-800 text-sm font-medium bg-red-100 rounded"
-                                        style="font-family: 'mv waheed';">{{address.reason}}</div>
+                                    <span
+                                        class=" inline-block px-1 py-0.5 text-red-800 text-sm font-medium bg-red-100 rounded-full"
+                                        style="font-family: 'mv waheed';">{{address.reason}}</span>
                                 </div>
                             </div>
                         </div>
 
                     </li>
-                    {%endfor%}
+                    {% endfor %}
                     {% endif %}
 
 
