@@ -16,7 +16,17 @@ services:
     command: gunicorn --workers=2 --bind=0.0.0.0:8000 covid_stat.wsgi:application
     volumes:
       - .:/code
-    ports:
-      - "8004:8000"
+    expose: 
+      - 8000
     depends_on:
       - db
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./staticfiles:/home/app/code/staticfiles
+    ports:
+      - 80:80
+    depends_on:
+      - web
+
+ 
