@@ -13,7 +13,7 @@ services:
     build:
         context: .
         dockerfile: docker/Dockerfile
-    command: sh -c 'python manage.py collectstatic && gunicorn --workers=2 --bind=0.0.0.0:8000 covid_stat.wsgi:application'
+    command: sh -c 'python manage.py collectstatic --noinput && gunicorn --workers=2 --bind=0.0.0.0:8000 covid_stat.wsgi:application'
     volumes:
       - .:/code
       - static_volume:/code/staticfiles
@@ -26,7 +26,7 @@ services:
     volumes:
       - static_volume:/home/app/code/staticfiles
     ports:
-      - 80:80
+      - 8004:80
     depends_on:
       - web
 
