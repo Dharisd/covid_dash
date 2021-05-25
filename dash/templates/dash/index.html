@@ -56,55 +56,45 @@
             </div>
 
 
-            <div class="flex  text-right bg-gray-100 dark:bg-gray-900">
-                <div class="container  text-right px-2 mx-auto my-10">
-                    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                        <div class="p-5 bg-white order-2 border-2 border-green-500 border-opacity-75 rounded shadow-sm">
-                            <div class="text-2xl text-gray-800 text-center" style="font-family: 'mv waheed';">ނައްސި
-                            </div>
-                            <div class="">
-                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.negative_samples}}
-                                </div>
-                            </div>
-                            <div class="text-xl text-center font-bold text-gray-600 ">
-                                {{samples.negative_samples_last_day}}</div>
-                            <div class="text-xs text-center  text-gray-600 " style="font-family: 'mv waheed';">
-                                ވޭތުވެދިޔަ 24 ގަޑިއިރު</div>
-                        </div>
-                        <div class="p-5 border-2 order-1 border-red-500 border-opacity-75 bg-white rounded  shadow-sm">
-                            <div class="text-2xl  text-gray-800 text-center" style="font-family: 'mv waheed';">ފައްސި
-                            </div>
-                            <div class="">
-                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.positive_samples}}
-                                </div>
-                                <div class="text-xl text-center font-bold text-gray-600 ">
-                                    {{samples.negative_samples_last_day}}</div>
-                                <div class="text-xs text-center text-gray-600 "
-                                    style="font-family: 'mv waheed';"> ވޭތުވެދިޔަ 24 ގަޑިއިރު</div>
-                            </div>
-                        </div>
-                        <div class="p-5 border-2 order-3 border-green-500 border-opacity-0 bg-white rounded shadow-sm">
-                            <div class="text-2xl  text-gray-800 text-center" style="font-family: 'mv waheed';">ނަތީޖާ
-                                ނުލިބޭ ސާމްޕްލްގެ އަދަދު</div>
-                            <div class="">
-                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.waiting_samples}}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-5 bg-white order-4  rounded shadow-sm">
-                            <div class="text-2xl text-gray-800 text-center" style="font-family: 'mv waheed';">ނެގުނު
-                                ސަާމްޕްލް ގެ އަދަދު</div>
-                            <div class="">
-                                <div class="text-3xl text-center font-bold text-gray-600 ">{{samples.waiting_samples}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
+            <div class="mt-16">
+                <dl class="mt-5 grid grid-cols-1 rounded-lg bg-white overflow-hidden shadow divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x">
+                  <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-xl font-normal text-gray-700" style="	font-family: 'mv waheed' ;">ފައްސި</dt>
+                    <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                      <div class="flex items-baseline text-4xl font-semibold text-red-600">{{samples.positive_samples}}</div>
+                      <div class="inline-flex justify-between items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0">
+                        <span class="mr-2">{{samples.positive_samples_last_day}}</span>
+                        <span class="text-sm text-right text-gray-700" dir="rtl" style="font-family: 'mv waheed';">ވޭތުވެދިޔަ 24 ގަޑިއިރު</span>
+                      </div>
+                    </dd>
+                  </div>
+        
+                  <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-xl font-normal text-gray-700" style="	font-family: 'mv waheed' ;">ނައްސި</dt>
+                    <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                      <div class="flex items-baseline text-4xl font-semibold text-green-600">{{samples.negative_samples}}</div>
+                      <div class="inline-flex justify-between items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0">
+                        <span class="mr-2">{{samples.negative_samples_last_day}}</span>
+                        <span class="text-sm text-right text-gray-700" dir="rtl" style="font-family: 'mv waheed';">ވޭތުވެދިޔަ 24 ގަޑިއިރު</span>
+                      </div>
+                    
+                    </dd>
+                  </div>
+        
+                  <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-xl font-normal text-gray-700" style="	font-family: 'mv waheed' ;">ނެގުނު ސާމްޕަލްގެ ޢަދަދު</dt>
+                    <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                      <div class="flex items-baseline text-4xl font-semibold text-yellow-600">{{samples.total_samples}}</div>
+        
+                      <div class="inline-flex justify-between items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0">
+                        <span class="mr-2">{{samples.total_samples_last_day}}</span>
+                        <span class="text-sm text-right text-gray-700" dir="rtl" style="font-family: 'mv waheed';">ވޭތުވެދިޔަ 24 ގަޑިއިރު</span>
+                      </div>
+                    </dd>
+                  </div>
+                </dl>
+                <p class="mt-3 text-left text-base text-gray-400">- </p>
+              </div>
 
 
 
@@ -115,7 +105,7 @@
                     style="font-family: 'mv waheed';">
                     ކަރަންޓީނު ކުރެވިފައިވާ ގެތައް
                 </p>
-                <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-10">
+                <ul class="grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-10">
                     {%if q_addresses%}
                     {% for address in q_addresses%}
                     <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
@@ -145,6 +135,29 @@
     </div>
     </div>
 
+    <footer class="bg-gray-800 pt-10 sm:mt-10 pt-10">
+        <div class="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-center">
+            <!-- Col-1 -->
+            <div class="pt-2">
+                <!-- Col Title -->
+                <div class="text-xl uppercase text-gray-400 font-medium mb-2 text-center" style="font-family: 'mv waheed';">
+                    ތައްޔާރުކުރީ
+                </div>
+    
+
+        <!-- Copyright Bar -->
+        <div class="pt-2">
+            <div class="flex pb-5 px-3 m-auto pt-5 
+                border-t border-gray-500 text-gray-400 text-sm 
+                flex-col md:flex-row max-w-6xl">
+                <div class="mt-2 text-xl" style="font-family: 'mv waheed';">
+            ށ.ފުނަދޫ ކައުންސިލް އިދާރާ
+                </div>
+    
+                <!-- Required Unicons (if you want) -->
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
